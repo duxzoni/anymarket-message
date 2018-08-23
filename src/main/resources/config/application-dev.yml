@@ -48,9 +48,9 @@ spring:
                     destination: topic-jhipster
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@anymarket-docker:1521:xe
-        username: ANYMARKET
-        password: ANYMARKET
+        url: jdbc:oracle:thin:@localhost:1521:xe
+        username: MESSAGES
+        password: MESSAGES
     jpa:
         database-platform: org.hibernate.dialect.Oracle12cDialect
         database: ORACLE

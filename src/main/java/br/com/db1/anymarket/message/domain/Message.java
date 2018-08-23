@@ -28,7 +28,7 @@ public class Message implements Serializable {
     private Long id;
 
     @NotNull
-    @Column(name = "jhi_key", nullable = false)
+    @Column(name = "key", nullable = false)
     private String key;
 
     @NotNull

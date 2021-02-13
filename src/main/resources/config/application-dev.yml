@@ -19,12 +19,12 @@ logging:
         io.github.jhipster: DEBUG
         br.com.db1.anymarket.message: DEBUG
 
-eureka:
-    instance:
-        prefer-ip-address: true
-    client:
-        service-url:
-            defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
+#eureka:
+#    instance:
+#        prefer-ip-address: true
+#    client:
+#        service-url:
+#            defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
 
 spring:
     profiles:
@@ -39,16 +39,16 @@ spring:
         serialization.indent_output: true
     cloud:
         stream:
-            kafka:
-                binder:
-                    brokers: localhost
-                    zk-nodes: localhost
+#            kafka:
+#                binder:
+#                    brokers: localhost
+#                    zk-nodes: localhost
             bindings:
                 output:
                     destination: topic-jhipster
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@localhost:1521:xe
+        url: jdbc:oracle:thin:@anymarket-docker:1521:xe
         username: MESSAGES
         password: MESSAGES
     jpa:

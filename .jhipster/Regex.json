@@ -1,0 +1,25 @@
+{
+    "name": "Regex",
+    "fields": [
+        {
+            "fieldName": "stringPattern",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180823115334",
+    "entityTableName": "regex",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": false,
+    "angularJSSuffix": "Anymarket",
+    "microserviceName": "AnymarketMessage"
+}

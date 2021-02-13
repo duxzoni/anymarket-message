@@ -1,0 +1,57 @@
+{
+    "name": "Translated",
+    "fields": [
+        {
+            "fieldName": "translatedMessage",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "reason",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "actionToFix",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "articleLink",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "message",
+            "otherEntityName": "message",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "language",
+            "otherEntityName": "language",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180823115338",
+    "entityTableName": "translated",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": false,
+    "angularJSSuffix": "Anymarket",
+    "microserviceName": "AnymarketMessage"
+}

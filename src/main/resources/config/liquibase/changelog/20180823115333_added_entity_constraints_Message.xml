@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Message.
+    -->
+    <changeSet id="20180823115333-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="regex_id"
+                                 baseTableName="message"
+                                 constraintName="fk_message_regex_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="regex"/>
+
+        <addForeignKeyConstraint baseColumnNames="origin_id"
+                                 baseTableName="message"
+                                 constraintName="fk_message_origin_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="origin"/>
+
+        <addForeignKeyConstraint baseColumnNames="category_id"
+                                 baseTableName="message"
+                                 constraintName="fk_message_category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="category"/>
+
+        <addForeignKeyConstraint baseColumnNames="messages_id"
+                                 baseTableName="message_tags"
+                                 constraintName="fk_message_tags_messages_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="message"/>
+        <addForeignKeyConstraint baseColumnNames="tags_id"
+                                 baseTableName="message_tags"
+                                 constraintName="fk_message_tags_tags_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hash_tag"/>
+        
+    </changeSet>
+</databaseChangeLog>

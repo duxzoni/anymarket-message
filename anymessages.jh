@@ -1,0 +1,83 @@
+entity Message {
+	key String required,
+    retry Boolean required
+}
+
+entity Regex {
+    stringPattern String required
+}
+relationship OneToOne {
+	Message{regex required} to Regex
+}
+
+entity Origin {
+	name String required
+}
+relationship ManyToOne {
+	Message{origin required} to Origin
+}
+
+entity Category {
+	name String required,
+    retry Boolean required
+    
+}
+relationship ManyToOne {
+	Message{category required} to Category
+}
+
+entity CategoryGroup{
+	name String required
+}
+relationship ManyToOne {
+	Category{group required} to CategoryGroup
+}
+
+entity Translated {
+	translatedMessage String required,
+    reason String required,
+    actionToFix String required,
+    articleLink String
+}
+relationship OneToMany {
+	Message{translated required} to Translated
+}
+
+entity Language {
+	name String required,
+	i18nCode String required
+}
+relationship ManyToOne {
+	Translated{language required} to Language
+}
+
+entity HashTag {
+	name String required
+}
+relationship ManyToMany {
+	Message{tags} to HashTag
+}
+
+
+entity Unhandled{
+	message String required,
+    url String required,
+    json String required
+}
+
+relationship ManyToOne {
+	Unhandled{origin required} to Origin
+}
+
+
+// Set pagination options
+paginate Message, Unhandled with infinite-scroll
+
+dto * with mapstruct
+
+// Set service options to all
+service all with serviceImpl 
+// Set an angular suffix
+angularSuffix * with Anymarket
+
+search * with elasticsearch except Regex, Origin, HashTag, Translated, Language
